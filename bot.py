@@ -41,10 +41,11 @@ def add_message(update, context):
     '''
     chat_id = str(update.message.chat_id)
     text = update.message.text
-    text = clean_text(text)
-    with open(os.path.join('data', chat_id), 'a') as file:
-        for i in text:
-            file.write(i +  '\n')
+    if " " in text:
+        text = clean_text(text)
+        with open(os.path.join('data', chat_id), 'a') as file:
+            for i in text:
+                file.write(i +  '\n')
 
 def imitate(update, context):
     chat_id = str(update.message.chat_id)
