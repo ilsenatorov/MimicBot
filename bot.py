@@ -25,7 +25,7 @@ table = str.maketrans('', '', string.punctuation)
 class POSifiedText(markovify.NewlineText):
     def word_split(self, sentence):
         words = re.split(self.word_split_pattern, sentence)
-        words = [ "::".join(tag) for tag in nltk.pos_tag(words) ]
+        words = [ "::".join(tag) for tag in nltk.pos_tag(words, lang='rus') ]
         return words
 
     def word_join(self, words):
