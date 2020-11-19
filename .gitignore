@@ -3,3 +3,5 @@
 data/*
 *.sh
 *.csv
+*.txt
+*.log
